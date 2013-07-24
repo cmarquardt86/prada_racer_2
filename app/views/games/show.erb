@@ -1,0 +1,49 @@
+
+<table class="racer_table" data-game-id="<%= @game.id %>">
+    <% @game.players.each_with_index do |player, i| %>
+      <tr id="player<%= i+1 %>" data-player-name="<%= player.name %>">
+        <td class="active"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    <% end %>
+</table>
+<br />
+<br />
+<br />
+<br />
+<div id="post-game-options" class="hidden">
+    <form action="/games" method="post">
+        <input type="hidden" name="player_1_name" value="<%= @game.players[0].name %>" />
+        <input type="hidden" name="player_2_name" value="<%= @game.players[1].name %>" />
+        <input type="submit" value="Play another game" /> <a href="/games/new">Change names</a>
+    </form>
+
+ <a href="/game_results/<%= @game.id %>">See Results</a>   
+</div>

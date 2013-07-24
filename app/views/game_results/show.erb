@@ -1,0 +1,13 @@
+<div id="results">
+	The Winner Was: 
+	<h1><%= @game.winner.name %></h1>
+	Their Time Was: 
+	<h2><%= @game.end_time - @game.start_time %> seconds</h2>
+	<br />
+	<br />
+	<form action="/games" method="post">
+	    <input type="hidden" name="player_1_name" value="<%= @game.players[0].name %>" />
+	    <input type="hidden" name="player_2_name" value="<%= @game.players[1].name %>" />
+	    <input type="submit" value="Play another game" /> <a href="/games/new">Change names</a>
+	</form>
+</div>
